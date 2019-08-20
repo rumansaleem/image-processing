@@ -7,7 +7,7 @@ def powerLawTransform(image,constant, gamma):
 
     for i in range(0,image.size[0]):
         for j in range(0,image.size[1]):
-            pixelMap[i,j] = tuple( ceil( constant * pow(pixel, gamma)) for pixel in pixelMap[i, j])
+            pixelMap[i,j] = tuple( ceil( constant * (pixel ** (1/gamma))) for pixel in pixelMap[i, j])
     
     return image
 
